@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.10.7 on win32)" generated="20230724 17:18:13.215" rpa="true" schemaversion="3">
+<suite id="s1" name="Test Robot" source="D:\63010666\3D-2\cepp\test_robot">
+<suite id="s1-s1" name="Har" source="D:\63010666\3D-2\cepp\test_robot\har.robot">
+<test id="s1-s1-t1" name="Record HAR file" line="9">
+<kw name="Configure HAR">
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${har_config}</var>
+<arg>path=${HAR_FILE_PATH}</arg>
+<arg>omitContent=True</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20230724 17:18:18.359" level="INFO">${har_config} = {'path': 'D:\\63010666\\3D-2\\cepp\\test_robot\\results\\google.har', 'omitContent': 'True'}</msg>
+<status status="PASS" starttime="20230724 17:18:18.354" endtime="20230724 17:18:18.361"/>
+</kw>
+<kw name="New Context" library="Browser">
+<arg>recordHar=${har_config}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new BrowserContext with specified options.</doc>
+<msg timestamp="20230724 17:18:18.365" level="INFO">{
+  "acceptDownloads": true,
+  "bypassCSP": false,
+  "forcedColors": "none",
+  "hideRfBrowser": false,
+  "ignoreHTTPSErrors": false,
+  "javaScriptEnabled": true,
+  "offline": false,
+  "recordHar": {
+    "omitContent": true,
+    "path": "D:\\63010666\\3D-2\\cepp\\test_robot\\results\\google.har"
+  },
+  "reducedMotion": "no-preference",
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "deprecated_pos_args": []
+}</msg>
+<msg timestamp="20230724 17:18:20.243" level="INFO">Successfully created context. </msg>
+<msg timestamp="20230724 17:18:20.245" level="INFO">{'acceptDownloads': True, 'bypassCSP': False, 'forcedColors': 'none', 'hideRfBrowser': False, 'ignoreHTTPSErrors': False, 'javaScriptEnabled': True, 'offline': False, 'recordHar': {'omitContent': True, 'path': 'D:\\63010666\\3D-2\\cepp\\test_robot\\results\\google.har'}, 'reducedMotion': 'no-preference', 'viewport': {'width': 1280, 'height': 720}, 'deprecated_pos_args': []}</msg>
+<msg timestamp="20230724 17:18:20.246" level="INFO">No browser was open. New browser was automatically opened when this context is created.</msg>
+<status status="PASS" starttime="20230724 17:18:18.362" endtime="20230724 17:18:20.250"/>
+</kw>
+<status status="PASS" starttime="20230724 17:18:18.351" endtime="20230724 17:18:20.252"/>
+</kw>
+<kw name="New Page" library="Browser">
+<arg>https://wikipedia.org</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<msg timestamp="20230724 17:18:22.730" level="INFO">Successfully initialized new page object and opened url: https://wikipedia.org</msg>
+<status status="PASS" starttime="20230724 17:18:20.273" endtime="20230724 17:18:22.732"/>
+</kw>
+<kw name="Parse HAR">
+<kw name="Load JSON from file" library="RPA.JSON">
+<var>${json}</var>
+<arg>${HAR_FILE_PATH}</arg>
+<doc>Load JSON data from a file, and return it as JSON serializable object.
+Depending on the input file the object can be either a dictionary,
+a list, or a scalar value.</doc>
+<msg timestamp="20230724 17:18:22.760" level="INFO">Loading JSON from file: D:\63010666\3D-2\cepp\test_robot\results\google.har</msg>
+<msg timestamp="20230724 17:18:22.765" level="FAIL">FileNotFoundError: [Errno 2] No such file or directory: 'D:\\63010666\\3D-2\\cepp\\test_robot\\results\\google.har'</msg>
+<status status="FAIL" starttime="20230724 17:18:22.758" endtime="20230724 17:18:22.770"/>
+</kw>
+<kw name="Get value from JSON" library="RPA.JSON">
+<var>${urls}</var>
+<arg>${json}</arg>
+<arg>$..url</arg>
+<doc>Get a single value from a JSON serializable object that matches the given expression.</doc>
+<status status="NOT RUN" starttime="20230724 17:18:22.772" endtime="20230724 17:18:22.773"/>
+</kw>
+<kw name="Save JSON to file" library="RPA.JSON">
+<arg>${urls}</arg>
+<arg>${OUTPUT_DIR}${/}urls.json</arg>
+<doc>Save a JSON serializable object or a string containing
+a JSON value into a file.</doc>
+<status status="NOT RUN" starttime="20230724 17:18:22.774" endtime="20230724 17:18:22.775"/>
+</kw>
+<status status="FAIL" starttime="20230724 17:18:22.756" endtime="20230724 17:18:22.778"/>
+</kw>
+<status status="FAIL" starttime="20230724 17:18:18.336" endtime="20230724 17:18:22.798">FileNotFoundError: [Errno 2] No such file or directory: 'D:\\63010666\\3D-2\\cepp\\test_robot\\results\\google.har'</status>
+</test>
+<status status="FAIL" starttime="20230724 17:18:13.372" endtime="20230724 17:18:23.265"/>
+</suite>
+<status status="FAIL" starttime="20230724 17:18:13.266" endtime="20230724 17:18:23.282"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tasks</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Test Robot">Test Robot</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1" name="Har">Test Robot.Har</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

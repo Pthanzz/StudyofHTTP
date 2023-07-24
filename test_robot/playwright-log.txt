@@ -1,0 +1,15 @@
+{"level":30,"time":"2023-07-24T10:20:12.758Z","pid":16820,"hostname":"DESKTOP-4LV9TLT","msg":"Listening on 53869"}
+{"level":30,"time":"2023-07-24T10:20:13.298Z","pid":16820,"hostname":"DESKTOP-4LV9TLT","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2023-07-24T10:20:13.301Z","pid":16820,"hostname":"DESKTOP-4LV9TLT","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2023-07-24T10:20:13.328Z","pid":16820,"hostname":"DESKTOP-4LV9TLT","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2023-07-24T10:20:13.329Z","pid":16820,"hostname":"DESKTOP-4LV9TLT","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2023-07-24T10:20:13.398Z","pid":16820,"hostname":"DESKTOP-4LV9TLT","msg":"Start of node method newContext"}
+{"level":30,"time":"2023-07-24T10:20:13.400Z","pid":16820,"hostname":"DESKTOP-4LV9TLT","msg":"currentBrowser: undefined"}
+{"level":30,"time":"2023-07-24T10:20:14.919Z","pid":16820,"hostname":"DESKTOP-4LV9TLT","msg":"Trace file: "}
+{"level":30,"time":"2023-07-24T10:20:14.962Z","pid":16820,"hostname":"DESKTOP-4LV9TLT","msg":"Changed active context"}
+{"level":30,"time":"2023-07-24T10:20:14.963Z","pid":16820,"hostname":"DESKTOP-4LV9TLT","msg":"End of node method newContext"}
+{"level":30,"time":"2023-07-24T10:20:15.023Z","pid":16820,"hostname":"DESKTOP-4LV9TLT","msg":"Start of node method newPage"}
+{"level":30,"time":"2023-07-24T10:20:15.024Z","pid":16820,"hostname":"DESKTOP-4LV9TLT","msg":"currentBrowser: [object Object]"}
+{"level":30,"time":"2023-07-24T10:20:15.438Z","pid":16820,"hostname":"DESKTOP-4LV9TLT","msg":"Video path: undefined"}
+{"level":30,"time":"2023-07-24T10:20:15.438Z","pid":16820,"hostname":"DESKTOP-4LV9TLT","msg":"Changed active page"}
+{"level":30,"time":"2023-07-24T10:20:16.797Z","pid":16820,"hostname":"DESKTOP-4LV9TLT","msg":"End of node method newPage"}
