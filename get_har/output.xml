@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.10.7 on win32)" generated="20230814 15:47:29.854" rpa="true" schemaversion="3">
+<suite id="s1" name="Har" source="D:\63010666\4D-1\project1\get_har\har.robot">
+<test id="s1-t1" name="Record HAR file" line="9">
+<kw name="Configure HAR">
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${har_config}</var>
+<arg>path=${HAR_FILE_PATH}</arg>
+<arg>omitContent=True</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20230814 15:47:32.975" level="INFO">${har_config} = {'path': 'D:\\63010666\\4D-1\\project1\\get_har\\wikipedia.har', 'omitContent': 'True'}</msg>
+<status status="PASS" starttime="20230814 15:47:32.974" endtime="20230814 15:47:32.975"/>
+</kw>
+<kw name="New Context" library="Browser">
+<arg>recordHar=${har_config}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new BrowserContext with specified options.</doc>
+<msg timestamp="20230814 15:47:32.977" level="INFO">{
+  "acceptDownloads": true,
+  "bypassCSP": false,
+  "forcedColors": "none",
+  "hideRfBrowser": false,
+  "ignoreHTTPSErrors": false,
+  "javaScriptEnabled": true,
+  "offline": false,
+  "recordHar": {
+    "path": "D:\\63010666\\4D-1\\project1\\get_har\\wikipedia.har",
+    "omitContent": true
+  },
+  "reducedMotion": "no-preference",
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "deprecated_pos_args": []
+}</msg>
+<msg timestamp="20230814 15:47:34.724" level="INFO">Successfully created context. </msg>
+<msg timestamp="20230814 15:47:34.725" level="INFO">{'acceptDownloads': True, 'bypassCSP': False, 'forcedColors': 'none', 'hideRfBrowser': False, 'ignoreHTTPSErrors': False, 'javaScriptEnabled': True, 'offline': False, 'recordHar': {'path': 'D:\\63010666\\4D-1\\project1\\get_har\\wikipedia.har', 'omitContent': True}, 'reducedMotion': 'no-preference', 'viewport': {'width': 1280, 'height': 720}, 'deprecated_pos_args': []}</msg>
+<msg timestamp="20230814 15:47:34.725" level="INFO">No browser was open. New browser was automatically opened when this context is created.</msg>
+<status status="PASS" starttime="20230814 15:47:32.976" endtime="20230814 15:47:34.725"/>
+</kw>
+<status status="PASS" starttime="20230814 15:47:32.972" endtime="20230814 15:47:34.726"/>
+</kw>
+<kw name="New Page" library="Browser">
+<arg>https://wikipedia.org</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<msg timestamp="20230814 15:47:36.403" level="INFO">Successfully initialized new page object and opened url: https://wikipedia.org</msg>
+<status status="PASS" starttime="20230814 15:47:34.727" endtime="20230814 15:47:36.403"/>
+</kw>
+<kw name="Parse HAR">
+<kw name="Load JSON from file" library="RPA.JSON">
+<var>${json}</var>
+<arg>${HAR_FILE_PATH}</arg>
+<doc>Load JSON data from a file, and return it as JSON serializable object.
+Depending on the input file the object can be either a dictionary,
+a list, or a scalar value.</doc>
+<msg timestamp="20230814 15:47:36.407" level="INFO">Loading JSON from file: D:\63010666\4D-1\project1\get_har\wikipedia.har</msg>
+<msg timestamp="20230814 15:47:36.409" level="FAIL">FileNotFoundError: [Errno 2] No such file or directory: 'D:\\63010666\\4D-1\\project1\\get_har\\wikipedia.har'</msg>
+<status status="FAIL" starttime="20230814 15:47:36.406" endtime="20230814 15:47:36.411"/>
+</kw>
+<kw name="Get value from JSON" library="RPA.JSON">
+<var>${urls}</var>
+<arg>${json}</arg>
+<arg>$..url</arg>
+<doc>Get a single value from a JSON serializable object that matches the given expression.</doc>
+<status status="NOT RUN" starttime="20230814 15:47:36.413" endtime="20230814 15:47:36.413"/>
+</kw>
+<kw name="Save JSON to file" library="RPA.JSON">
+<arg>${urls}</arg>
+<arg>${OUTPUT_DIR}${/}urls.json</arg>
+<doc>Save a JSON serializable object or a string containing
+a JSON value into a file.</doc>
+<status status="NOT RUN" starttime="20230814 15:47:36.414" endtime="20230814 15:47:36.415"/>
+</kw>
+<status status="FAIL" starttime="20230814 15:47:36.404" endtime="20230814 15:47:36.417"/>
+</kw>
+<status status="FAIL" starttime="20230814 15:47:32.963" endtime="20230814 15:47:36.419">FileNotFoundError: [Errno 2] No such file or directory: 'D:\\63010666\\4D-1\\project1\\get_har\\wikipedia.har'</status>
+</test>
+<status status="FAIL" starttime="20230814 15:47:29.859" endtime="20230814 15:47:36.849"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tasks</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Har">Har</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
