@@ -3,13 +3,15 @@ Library    Browser
 Library    RPA.JSON
 Library    OperatingSystem
 *** Variables ***
-${HAR_FILE_PATH}=    ${OUTPUT_DIR}${/}example.har
+${HARFILENAME}=    example.har
+${HAR_FILE_PATH}=    ${OUTPUT_DIR}${/}${HARFILENAME}.har
+${RePlayWeb}=    https://example.com/
 
 *** Tasks ***
 Record HAR file
     Init File
     Configure HAR
-    New Page        https://example.com/    
+    New Page        ${RePlayWeb}
     Parse HAR
 
 *** Keywords ***
