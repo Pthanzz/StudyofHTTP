@@ -1,0 +1,39 @@
+
+34.120.195.249ª" 	
+êPOST /api/5720031/envelope/?sentry_key=b93ddebac1c34cc393134ffa692bca07&sentry_version=7&sentry_client=sentry.javascript.react%2F7.68.0 HTTP/1.1 
+Hosto248881.ingest.sentry.io
+
+Connection
+keep-alive
+Content-Length4875
+	sec-ch-ua("Chromium";v="115", "Not/A)Brand";v="99"
+sec-ch-ua-platform"Linux"
+sec-ch-ua-mobile?0s
+
+User-AgenteMozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36(
+Content-Typetext/plain;charset=UTF-8
+Accept*/* 
+Originhttps://www.tumblr.com
+Sec-Fetch-Site
+cross-site
+Sec-Fetch-Modecors
+Sec-Fetch-Destempty"
+Refererhttps://www.tumblr.com/$
+Accept-Encodinggzip, deflate, br!
+Accept-Languageen-GB,en;q=0.9Á{"sent_at":"2023-09-09T07:28:35.838Z","sdk":{"name":"sentry.javascript.react","version":"7.68.0"}}
+{"type":"session"}
+{"sid":"7af0e301c08c4b6e9a385d7def090306","init":true,"started":"2023-09-09T07:28:35.837Z","timestamp":"2023-09-09T07:28:35.837Z","status":"ok","errors":0,"attrs":{"release":"redpop@b3bf73101cd091a432d2ec049a562494b62505e0","environment":"production","user_agent":"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36"}}*∞
+HTTP/1.1 200 OK
+Servernginx%
+DateSat, 09 Sep 2023 07:28:36 GMT 
+Content-Typeapplication/json
+Content-Length2 
+access-control-allow-origin*K
+varyCorigin,access-control-request-method,access-control-request-headersP
+access-control-expose-headers/x-sentry-error,x-sentry-rate-limits,retry-after,
+cross-origin-resource-policycross-origin"
+x-envoy-upstream-service-time0I
+Strict-Transport-Security,max-age=31536000; includeSubDomains; preload
+Via
+1.1 google9
+Alt-Svc.h3=":443"; ma=2592000,h3-29=":443"; ma=2592000{}
