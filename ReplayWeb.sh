@@ -1,5 +1,5 @@
 #!/usr/bin/bash
-data_file="ParaForReplay.csv"
+data_file="/home/mahimahi/ParaForReplay.csv"
 
 typeset -i Latest_task=$(cat lastReplayRun.txt) #get last task
 echo "$Latest_task"
@@ -25,7 +25,9 @@ elif [[ $url == https://* || $url == http://* ]]; then
 else
     # Add "https://" to the beginning of the URL
     full_url="https://$url"
-    mm-webreplay Record/"$folder" mm-delay $Delay mm-loss uplink $Loss mm-link 12Mbps_trace 12Mbps_trace  -- robot --variable HARFILENAME:$url --variable ReplayWeb:$full_url gethar.robot 
+    export DISPLAY=:0.0
+    mm-webreplay Record/"$folder" mm-delay $Delay mm-loss uplink $Loss mm-link ${BW}Mbps_trace ${BW}Mbps_trace  -- robot --variable HARFILENAME:$folder --variable ReplayWeb:$full_url /home/mahimahi/gethar.robot
+    mv -v /home/mahimahi/${folder}.har /home/mahimahi/Replay/${folder}/${folder}${Delay},${Loss},${BW}.har
     echo "$curr_task" > lastReplayRun.txt
     echo "$full_url"
 

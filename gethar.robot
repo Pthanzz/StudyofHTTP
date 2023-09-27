@@ -9,9 +9,11 @@ ${RePlayWeb}=    https://example.com/
 
 *** Tasks ***
 Record HAR file
+    ${old_timeout} =     Set Browser Timeout    5m
     Init File
     Configure HAR
     New Page        ${RePlayWeb}
+    Set Browser Timeout    ${old_timeout}
     Parse HAR
 
 *** Keywords ***
